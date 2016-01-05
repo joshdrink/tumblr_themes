@@ -1,0 +1,536 @@
+/* =============================================================================
+
+    HERO CSS
+    Authored by Josh Beveridge
+
+============================================================================= */
+.stage {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+}
+
+.pane {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .3s ease .6s;
+    width: 100vw;
+
+    &.black {
+        background: $black;
+        transform: translate(0, -50%);
+
+        @media $(landscape) {
+            transform: translate(-50%, 0);
+        }
+
+        &.active {
+            transform: translate(0, 0);
+        }
+
+        &.inactive {
+            transform: translate(0, -100%);
+
+            @media $(landscape) {
+                transform: translate(-100%, 0);
+            }
+
+        }
+
+    }
+
+    &.white {
+        background: $white;
+        transform: translate(0, 50%);
+
+        @media $(landscape) {
+            transform: translate(50%, 0);
+        }
+
+        &.active {
+            transform: translate(0, 0);
+        }
+
+        &.inactive {
+            transform: translate(0, 100%);
+
+            @media $(landscape) {
+                transform: translate(100%, 0);
+            }
+
+        }
+
+    }
+
+}
+
+.icon-wrapper {
+    perspective: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) rotate(45deg);
+    z-index: 200;
+
+    .square-white {
+        background: $white;
+        height: 35vw;
+        transform: translate3d(0, 0, 0);
+        transition: background .3s ease 1s;
+        width: 35vw;
+
+        @media $(landscape) {
+            height: 25vh;
+            width: 25vh;
+        }
+
+        @media $(tablet) {
+            height: 25vw;
+            width: 25vw;
+        }
+
+        @media $(tablet-landscape) {
+            height: 20vh;
+            width: 20vh;
+        }
+
+    }
+
+    .square-red {
+        background: $red;
+        height: 30vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0) rotate3d(-1, 1, 0, 0);
+        transition: all 1s ease;
+        width: 30vw;
+
+        @media $(landscape) {
+            height: 20vh;
+            transform: translate3d(-50%, -50%, 0) rotate3d(1, 1, 0, 0);
+            width: 20vh;
+        }
+
+        @media $(tablet) {
+            height: 20vw;
+            width: 20vw;
+        }
+
+        @media $(tablet-landscape) {
+            height: 17vh;
+            width: 17vh;
+        }
+
+    }
+
+    img {
+        backface-visibility: hidden;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0) rotate(-45deg) rotate3d(1, 0, 0, 0);
+        transition: all 1s ease;
+        width: 12vw;
+
+        @media $(landscape) {
+            transform: translate3d(-50%, -50%, 0) rotate(-45deg) rotate3d(0, 1, 0, 0);
+            width: 8vh;
+        }
+
+        @media $(tablet) {
+            width: 8vw;
+        }
+
+        @media $(tablet-landscape) {
+            width: 6vh;
+        }
+
+    }
+
+    &.design {
+        transform: translate3d(200%, -50%, 0) rotate(45deg);
+        transition: transform 0s linear 1.3s;
+
+        @media $(landscape) {
+            transform: translate3d(500%, -50%, 0) rotate(45deg);
+        }
+
+        .square-red {
+            transform: translate3d(-50%, -50%, 0) rotate3d(-1, 1, 0, 90deg);
+            transition: all .25s ease .9s;
+
+            @media $(landscape) {
+                transform: translate3d(-50%, -50%, 0) rotate3d(1, 1, 0, 90deg);
+            }
+
+        }
+
+        img {
+            transform: translate3d(-50%, -50%, 0) rotate(-45deg) rotate3d(1, 0, 0, 90deg);
+            transition: all .25s ease .9s;
+
+            @media $(landscape) {
+                transform: translate3d(-50%, -50%, 0) rotate(-45deg) rotate3d(0, 1, 0, 90deg);
+            }
+
+        }
+
+    }
+
+    &.gaming {
+        transform: translate3d(200%, -50%, 0) rotate(45deg);
+        transition: transform 0s linear 1.3s;
+
+        @media $(landscape) {
+            transform: translate3d(500%, -50%, 0) rotate(45deg);
+        }
+
+        .square-white {
+            background: $black;
+            transition: all .3s ease .3s;
+        }
+
+        .square-red {
+            transform: translate3d(-50%, -50%, 0) rotate3d(-1, 1, 0, 90deg);
+            transition: all .25s ease .9s;
+
+            @media $(landscape) {
+                transform: translate3d(-50%, -50%, 0) rotate3d(1, 1, 0, 90deg);
+            }
+
+        }
+
+        img {
+            transform: translate3d(-50%, -50%, 0) rotate(-45deg) rotate3d(1, 0, 0, 90deg);
+            transition: all .25s ease .9s;
+
+            @media $(landscape) {
+                transform: translate3d(-50%, -50%, 0) rotate(-45deg) rotate3d(0, 1, 0, 90deg);
+            }
+
+        }
+
+    }
+
+    &:hover {
+
+        .square-red {
+            transform: translate3d(-50%, -50%, 0) rotate3d(-1, 1, 0, 360deg);
+            transition: all 1s ease;
+
+            @media $(landscape) {
+                transform: translate3d(-50%, -50%, 0) rotate3d(1, 1, 0, 360deg);
+            }
+
+        }
+
+        img {
+            transform: translate3d(-50%, -50%, 0) rotate(-45deg) rotate3d(1, 0, 0, 360deg);
+            transition: all 1s ease;
+
+            @media $(landscape) {
+                transform: translate3d(-50%, -50%, 0) rotate(-45deg) rotate3d(0, 1, 0, 360deg);
+            }
+
+        }
+
+    }
+
+}
+
+.hero-section {
+    height: 50vh;
+    position: relative;
+    width: 100vw;
+    z-index: 50;
+
+    @media $(landscape) {
+        position: absolute;
+        height: 100vh;
+        width: 50vw;
+        z-index: 100;
+    }
+
+    button {
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+
+        i {
+            color: $red;
+            display: block;
+            font-size: 2rem;
+            position: absolute;
+            left: 50%;
+            transition: all .3s ease;
+
+            @media $(landscape) {
+                font-size: 1.2rem;
+            }
+
+            @media $(tablet-landscape) {
+                font-size: 2rem;
+                left: auto;
+                transition: all .5s ease;
+            }
+
+        }
+
+        h1 {
+            font-family: $font-roboto-cdn;
+            font-size: 2.3rem;
+            font-weight: 700;
+            line-height: 1;
+            margin: 0;
+            text-transform: uppercase;
+            transition: all .3s ease;
+
+            @media $(landscape) {
+                font-size: 1.5rem;
+            }
+
+            @media $(tablet-landscape) {
+                font-size: 2.3rem;
+            }
+
+        }
+
+    }
+
+    &.design {
+
+        @media $(landscape) {
+            top: 0;
+            left: 0;
+        }
+
+        button {
+            top: 45%;
+
+            @media $(landscape) {
+                top: 50%;
+                left: 40%;
+            }
+
+            i {
+                top: 0;
+                transform: translate3d(-50%, -150%, 0);
+
+                @media $(landscape) {
+                    top: 50%;
+                    left: 0;
+                    transform: translate3d(-150%, -50%, 0);
+                }
+
+                &:before {
+
+                    @media $(landscape) {
+                        content: "\f053";
+                    }
+
+                }
+
+            }
+
+            h1 {
+                color: $white;
+            }
+
+            &:hover {
+
+                i {
+                    transform: translate3d(-50%, -155%, 0);
+
+                    @media $(landscape) {
+                        transform: translate3d(-155%, -50%, 0);
+                    }
+
+                }
+
+            }
+
+        }
+
+        &.active {
+            transform: translate(100%, 0);
+            transition: transform 0s linear 1s;
+
+            @media $(landscape) {
+                transform: translate(-100%, 0);
+            }
+
+            button {
+
+                i {
+                    transform: translate3d(-50%, -500%, 0);
+
+                    @media $(landscape) {
+                        transform: translate3d(-1000%, -50%, 0);
+                    }
+
+                    @media $(tablet) {
+                        transform: translate3d(-50%, -1000%, 0);
+                    }
+
+                }
+
+                h1 {
+                    opacity: 0;
+                    transition: opacity .3s ease .3s;
+                }
+
+                &:hover {
+
+                    i {
+                        transform: translate3d(-50%, -1000%, 0);
+
+                        @media $(landscape) {
+                            transform: translate3d(-1000%, -50%, 0);
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        &.inactive {
+            transform: translate(100%, 0);
+            transition: transform 0s linear 1s;
+
+            @media $(landscape) {
+                transform: translate(-100%, 0);
+            }
+
+            button {
+                opacity: 0;
+                transition: opacity .3s ease;
+            }
+
+        }
+
+    }
+
+    &.gaming {
+
+        @media $(landscape) {
+            top: 0;
+            right: 0;
+        }
+
+        button {
+            top: 55%;
+
+            @media $(landscape) {
+                top: 50%;
+                left: 60%;
+            }
+
+            i {
+                bottom: 0;
+                transform: translate3d(-50%, 150%, 0);
+
+                @media $(landscape) {
+                    top: 50%;
+                    right: 0;
+                    bottom: auto;
+                    transform: translate3d(150%, -50%, 0);
+                }
+
+                &:before {
+
+                    @media $(landscape) {
+                        content: "\f054";
+                    }
+
+                }
+
+            }
+
+            h1 {
+                color: $black;
+            }
+
+            &:hover {
+
+                i {
+                    transform: translate3d(-50%, 155%, 0);
+
+                    @media $(landscape) {
+                        transform: translate3d(155%, -50%, 0);
+                    }
+
+                }
+
+            }
+
+        }
+
+        &.active {
+            transform: translate(100%, 0);
+            transition: transform 0s linear 1s;
+
+            @media $(landscape) {
+                transform: translate(100%, 0);
+            }
+
+            button {
+
+                i {
+                    transform: translate3d(-50%, 500%, 0);
+
+                    @media $(landscape) {
+                        transform: translate3d(1000%, -50%, 0);
+                    }
+
+                    @media $(tablet) {
+                        transform: translate3d(-50%, 1000%, 0);
+                    }
+
+                }
+
+                h1 {
+                    opacity: 0;
+                    transition: opacity .3s ease .3s;
+                }
+
+                &:hover {
+
+                    i {
+                        transform: translate3d(-50%, 1000%, 0);
+
+                        @media $(landscape) {
+                            transform: translate3d(1000%, -50%, 0);
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        &.inactive {
+            transform: translate(100%, 0);
+            transition: transform 0s linear 1s;
+
+            button {
+                opacity: 0;
+                transition: opacity .3s ease;
+            }
+
+        }
+
+    }
+
+}

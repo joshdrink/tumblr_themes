@@ -1,0 +1,272 @@
+/* =============================================================================
+
+    ARTICLE CSS
+    Authored by Josh Beveridge
+
+============================================================================= */
+.article-section {
+    height: 100vh;
+    opacity: 0;
+    /*overflow-y: auto;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(100%, 0);
+    width: 100vw;
+    z-index: 300;
+
+    @media $(landscape) {
+        transform: translate(0, -100%);
+    }
+
+    .content-wrapper {
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: relative;
+
+        .layout-wrapper {
+
+            @media $(tablet-landscape) {
+                max-width: 30rem;
+                width: 60%;
+            }
+
+            @media $(desktop) {
+                max-width: 35rem;
+            }
+
+            >.wrapper,
+            >.article,
+            >.post-sharing {
+                display: block;
+                margin: 0 auto;
+                max-width: 85%;
+                width: 30rem;
+            }
+
+            >.wrapper {
+                margin: 2rem auto;
+
+                @media $(tablet-landscape) {
+                    display: none;
+                }
+
+                button {
+                    color: $red;
+                    display: inline-block;
+                    font-family: $font-roboto;
+                    font-weight: 500;
+                    text-decoration: underline;
+
+                    i {
+                        font-size: .8rem;
+                        margin: 0 .5rem 0 0;
+                    }
+
+                }
+
+            }
+
+            .article {
+
+                .post-title {
+                    margin: 2rem 0;
+                    text-align: center;
+
+                    @media $(tablet-landscape) {
+                        font-size: 2.3rem;
+                        margin: 4rem auto 2rem auto;
+                    }
+
+                }
+
+                .post-date {
+                    display: block;
+                    font-family: $font-roboto;
+                    font-size: .7rem;
+                    font-weight: 300;
+                    margin: 0 0 .5rem 0;
+                    text-align: center;
+                }
+
+                .post-length {
+                    display: block;
+                    font-family: $font-roboto;
+                    font-size: .7rem;
+                    font-weight: 300;
+                    margin: 0 0 2rem 0;
+                    text-align: center;
+                }
+
+            }
+
+        }
+
+    }
+
+    &.active {
+        opacity: 1;
+        transform: translate(0, 0);
+        transition: opacity .3s ease .7s;
+    }
+
+    &.design {
+
+        .layout-wrapper {
+
+            @media $(tablet-landscape) {
+                float: right;
+                margin: 0 5vw 0 0;
+            }
+
+            @media $(cinema) {
+                float: right;
+                margin: 0 10vw 0 0;
+            }
+
+        }
+
+    }
+
+    &.gaming {
+
+        .content-wrapper {
+
+            .layout-wrapper {
+
+                @media $(tablet-landscape) {
+                    margin: 0 0 0 5vw;
+                }
+
+                @media $(cinema) {
+                    margin: 0 0 0 10vw;
+                }
+
+            }
+
+            h1 {
+                color: $title-light;
+            }
+
+            .article {
+
+                .post-length {
+                    font-weight: 500;
+                }
+
+                h1, h2, h3, h4, h5, h6 {
+                    color: $title-light;
+                }
+
+                p,
+                em,
+                span,
+                blockquote,
+                article {
+                    color: $copy-light;
+                }
+
+                strong {
+                    color: $strong-light;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.post-sharing {
+
+    dl {
+        display: block;
+        position: relative;
+
+        dd {
+            margin: 1rem 0;
+            width: 100%;
+
+            @media $(tablet) {
+                display: inline-block;
+                width: 33%;
+            }
+
+            @media $(tablet-landscape) {
+                display: inline-block;
+                width: 33%;
+            }
+
+            i {
+                color: $black;
+                margin: 0 .5rem 0 0;
+            }
+
+            a {
+                display: block;
+                font-family: $font-roboto;
+                font-weight: 500;
+                text-align: center;
+            }
+
+            &:last-child {
+
+                @media $(tablet) {
+                    margin: 0;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translate(0, -50%);
+                }
+
+                @media $(tablet-landscape) {
+                    margin: 0;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translate(0, -50%);
+                }
+
+            }
+
+        }
+
+    }
+
+    h3 {
+        margin: 2rem 0;
+        text-align: center;
+
+        @media $(tablet) {
+            margin: 2rem 0 5rem 0;
+        }
+
+        @media $(tablet-landscape) {
+            margin: 2rem 0 5rem 0;
+        }
+
+    }
+
+    &.gaming {
+
+        dl {
+
+            dd {
+
+                i {
+                    color: $white;
+                }
+
+            }
+
+        }
+
+        h3 {
+            color: $white;
+        }
+
+    }
+
+}

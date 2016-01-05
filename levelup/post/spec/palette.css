@@ -1,0 +1,24 @@
+/* =============================================================================
+
+    PALETTE CSS
+    Authored by Josh Beveridge
+
+============================================================================= */
+
+/* Greyscale */
+$black: rgba(40, 40, 40, 1);
+$grey: rgba(225, 225, 225, 1);
+$white: rgba(251, 251, 250, 1);
+
+/* Typography */
+$copy: rgba(0, 0, 0, .65);
+$strong: rgba(0, 0, 0, .75);
+$title: rgba(0, 0, 0, .85);
+
+$copy-light: rgba(251, 251, 250, .65);
+$strong-light: rgba(251, 251, 250, .75);
+$title-light: rgba(251, 251, 250, .85);
+
+/* Custom Colours */
+$red: rgba(225, 25, 60, 1);
+/*$red: #9100FF;*/

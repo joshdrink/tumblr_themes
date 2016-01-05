@@ -1,0 +1,79 @@
+/* =============================================================================
+
+    LOADER CSS
+    Authored by Josh Beveridge
+
+============================================================================= */
+.loader {
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(100%, 0);
+    width: 100vw;
+    z-index: 500;
+
+    @media $(landscape) {
+        transform: translate(0, -100%);
+    }
+
+    @media $(tablet-landscape) {
+        max-width: 30rem;
+        width: 100%;
+    }
+
+    @media $(desktop) {
+        max-width: 35rem;
+    }
+
+    p {
+        color: $red;
+        display: block;
+        font-family: $font-roboto-cdn;
+        font-weight: 700;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%,);
+        text-align: center;
+        text-transform: uppercase;
+        width: 100%;
+    }
+
+    &.active {
+        transform: translate(0, 0);
+
+        p {
+            animation: pulse 1s infinite;
+        }
+
+    }
+
+    &.design {
+        background: $white;
+
+        @media $(tablet-landscape) {
+            left: auto;
+            right: 5vw;
+        }
+
+    }
+
+    &.gaming {
+        background: $black;
+
+        @media $(tablet-landscape) {
+            left: 5vw;
+        }
+
+    }
+
+}
+
+@keyframes pulse {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}

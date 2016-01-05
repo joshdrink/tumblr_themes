@@ -1,0 +1,332 @@
+/* =============================================================================
+
+    LISTING CSS
+    Authored by Josh Beveridge
+
+============================================================================= */
+.listing-section {
+    height: 100vh;
+    opacity: 0;
+    /*overflow: auto;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(100%, 0);
+    width: 100vw;
+    z-index: 300;
+
+    @media $(landscape) {
+        transform: translate(0, -100%);
+    }
+
+    .content-wrapper {
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: relative;
+
+        .layout-wrapper {
+
+            @media $(tablet-landscape) {
+                max-width: 30rem;
+                width: 60%;
+            }
+
+            @media $(desktop) {
+                max-width: 35rem;
+            }
+
+            .section-summary,
+            >input,
+            .article-list,
+            .section-false {
+                display: block;
+                margin: 0 auto;
+                max-width: 85%;
+                width: 30rem;
+            }
+
+            >.wrapper {
+                margin: 0;
+                padding: 2rem;
+                width: 100%;
+
+                @media $(tablet-landscape) {
+                    display: none;
+                }
+
+                button {
+                    color: $red;
+                    display: inline-block;
+                    font-family: $font-roboto;
+                    font-weight: 500;
+                    text-decoration: underline;
+
+                    i {
+                        font-size: .8rem;
+                        margin: 0 .5rem 0 0;
+                    }
+
+                }
+
+            }
+
+            .section-title {
+                font-family: $font-roboto-cdn;
+                font-size: 2.3rem;
+                font-weight: 900;
+                line-height: 1;
+                margin: 0;
+                padding: 0 2rem 2rem 2rem;
+                text-align: center;
+                text-transform: uppercase;
+                width: 100%;
+
+                @media $(tablet-landscape) {
+                    padding: 4rem 2rem 2rem 2rem;
+                    margin: 0 auto 2rem auto;
+                    max-width: 85%;
+                    width: 30rem;
+                }
+
+            }
+
+            .social {
+                text-align: center;
+
+                a {
+                    font-family: $font-roboto;
+                    font-weight: 500;
+                    margin: 0 1rem;
+                }
+
+                i {
+                    margin: 0 .5rem 0 0;
+                }
+
+            }
+
+            .section-summary {
+                margin: 2rem auto;
+            }
+
+            input {
+                background: none;
+                font-family: $font-roboto;
+                margin: 2rem auto;
+                padding: .5rem;
+            }
+
+            .article-list {
+
+                dd {
+                    margin: 0 0 2rem 0;
+                    padding: 0 0 2rem 0;
+
+                    button {
+                        display: block;
+                        color: $red;
+                        text-align: left;
+                        /*text-decoration: underline;*/
+
+                        h3 {
+                            /*color: $red;*/
+                            margin: 0 0 1rem 0;
+                            text-align: left;
+                        }
+
+                    }
+
+                    span {
+                        display: block;
+                        font-family: $font-roboto;
+                        font-size: .7rem;
+                        font-weight: 300;
+                        margin: 0 0 .5rem 0;
+                        text-decoration: none;
+                    }
+
+                    .wpm {
+                        display: block;
+                        font-family: $font-roboto;
+                        font-size: .7rem;
+                        font-weight: 300;
+                        margin: .5rem 0;
+                    }
+
+                    p {
+                        margin: 1rem 0 0 0;
+                        text-decoration: none;
+                    }
+
+                    &:last-child {
+                        border-bottom: none;
+                        margin: 0;
+                    }
+
+                }
+
+            }
+
+            .section-false {
+                margin: 3rem auto;
+                text-align: center;
+            }
+
+        }
+
+    }
+
+    &.active {
+        opacity: 1;
+        transform: translate(0, 0);
+        transition: opacity .3s ease 1.5s;
+    }
+
+    &.return {
+        opacity: 1;
+        transform: translate(0, 0);
+        transition: opacity .3s ease;
+    }
+
+    &.design {
+        background: $white;
+
+        .content-wrapper {
+
+            .layout-wrapper {
+
+                @media $(tablet-landscape) {
+                    float: right;
+                    margin: 0 5vw 0 0;
+                }
+
+                @media $(cinema) {
+                    margin: 0 10vw 0 0;
+                }
+
+            }
+
+            .section-title {
+                /*background: $black;*/
+                /*border: 1px solid $black;*/
+                /*border-top: none;*/
+                color: $title;
+            }
+
+            .social {
+
+                i {
+                    color: $copy;
+                }
+
+            }
+
+            input {
+                border: 1px solid $black;
+                color: $copy;
+            }
+
+            .article-list {
+
+                dd {
+                    border-bottom: 1px solid $black;
+
+                    span {
+                        color: $copy;
+                    }
+
+                    p {
+                        color: $copy;
+                    }
+
+                }
+
+            }
+
+            .section-false {
+                color: $copy;
+            }
+
+        }
+
+    }
+
+    &.gaming {
+        background: $black;
+
+        .content-wrapper {
+
+            .layout-wrapper {
+
+                @media $(tablet-landscape) {
+                    margin: 0 0 0 5vw;
+                }
+
+                @media $(cinema) {
+                    margin: 0 0 0 10vw;
+                }
+
+            }
+
+            .section-title {
+                /*border: 1px solid $white;*/
+                /*border-top: none;*/
+                color: $title-light;
+            }
+
+            .social {
+
+                i {
+                    color: $copy-light;
+                }
+
+            }
+
+            input {
+                border: 1px solid $white;
+                color: $copy-light;
+            }
+
+            .section-summary {
+                color: $copy-light;
+            }
+
+            .article-list {
+
+                dd {
+                    border-bottom: 1px solid $white;
+
+                    button {
+
+                        h3 {
+                            color: $title-light;
+                        }
+
+                    }
+
+                    span {
+                        color: $copy-light;
+                    }
+
+                    >a {
+                        font-weight: 500;
+                    }
+
+                    p {
+                        color: $copy-light;
+                    }
+
+                }
+
+            }
+
+            .section-false {
+                color: $title-light;
+            }
+
+        }
+
+    }
+
+}

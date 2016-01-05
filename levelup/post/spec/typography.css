@@ -1,0 +1,120 @@
+/* =============================================================================
+
+    TYPOGRAPHY CSS
+    Authored by Josh Beveridge
+
+============================================================================= */
+
+/* Google Fonts ============================================================= */
+$font-roboto: 'Roboto', sans-serif;
+$font-roboto-cdn: 'Roboto Condensed', sans-serif;
+$font-roboto-mono: 'Roboto Mono';
+$font-pt: 'PT Serif', serif;
+
+/* Custom Fonts ============================================================= */
+
+/* Selection ================================================================ */
+::selection {
+    background: $black;
+    color: $white;
+}
+
+/* Headings ================================================================= */
+h1 {font-size: 2rem;}
+h2 {font-size: 1.8rem;}
+h3 {font-size: 1.6rem;}
+h4 {font-size: 1.4rem;}
+h5 {font-size: 1.3rem;}
+h6 {font-size: 1.2rem;}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $title;
+    font-family: $font-roboto;
+    line-height: 1;
+    margin: 2.5rem 0 1rem 0;
+}
+
+/* Copy ===================================================================== */
+p,
+strong,
+em,
+span,
+blockquote,
+article {
+    color: $copy;
+    font-size: .9rem;
+    margin: 1.5rem 0;
+    line-height: 1;
+}
+
+p {
+    font-family: $font-pt;
+    line-height: 1.6;
+}
+
+strong {
+    color: $strong;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid $red;
+    height: 0;
+    margin: 2.5rem 0;
+    padding: 0;
+    width: 100%;
+}
+
+blockquote {
+    border-left: 1px solid $red;
+    font-family: $font-pt;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+    padding: 0 0 0 2rem;
+
+    p {
+        margin: 1rem 0
+    }
+
+}
+
+/* Anchors */
+a,
+a:visited,
+a:link {
+    color: $red;
+}
+
+button {
+    padding: 0;
+}
+
+/* Lists ==================================================================== */
+ul {
+    margin: 1rem 0 1rem 1rem;
+    padding: 0;
+}
+
+dl {
+    margin: 0;
+    padding: 0;
+
+    dt {
+        display: none;
+    }
+
+    dd {
+        margin: 0;
+        padding: 0;
+    }
+
+}
+
+/* Forms ==================================================================== */
+@import 'spec/forms.css';
+
+/* Tables =================================================================== */
+table {
+    width: 100%;
+}

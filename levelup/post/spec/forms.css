@@ -1,0 +1,246 @@
+/* =============================================================================
+
+    FORMS CSS
+    Property of Norex
+    Authored by Josh Beveridge and Justin Bellefontaine
+
+============================================================================= */
+
+textarea {
+    width: 100%;
+    min-height: 250px;
+}
+
+input {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.checkbox-radio-list > dd {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 70em) {
+
+    .checkbox-radio-list > dd {
+        width: auto;
+        margin: 0;
+        padding-right: 1rem;
+    }
+
+}
+
+/* == Checkbox and Radios =================================================== */
+
+/* Checkbox & Radio */
+$checkbox-radio-size: 22px;
+$checkbox-radio-border: 2px solid #222;
+$checkbox-radio-border-hover: 2px solid #666;
+$checkbox-radio-border-active: 2px solid #ed1556;
+$checkbox-radio-background: #fff;
+$checkbox-radio-label-spacing: 5px;
+
+/* Checkboxes Only */
+$checkbox-radius: 0;
+$checkbox-check-size: 0.65rem;
+$checkbox-check-position: 0.25rem;
+$checkbox-check-color: #222;
+$checkbox-check-color-active: #ed1556;
+$checkbox-check-font: 'FontAwesome';
+$checkbox-check-font-size: 0.8rem;
+$checkbox-check-icon: '\f00c';
+
+/* Radios Only */
+$radio-radius: 100%;
+$radio-dot-size: 0.45rem;
+$radio-dot-color: #222;
+$radio-dot-color-active: #ed1556;
+$radio-dot-radius: 100%;
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    text-transform: none;
+    /* font-weight: normal; */
+
+    &:hover {
+        color: inherit !important;
+    }
+
+    em {
+        font-style: normal;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    height: $checkbox-radio-size;
+    width: $checkbox-radio-size;
+    vertical-align: middle;
+    border: none;
+    transition: all 0.2s ease 0s;
+    display: none;
+    appearance: none;
+
+    + label {
+        margin: 0;
+        cursor: pointer;
+    }
+
+    + label span {
+        width: $checkbox-radio-size;
+        height: $checkbox-radio-size;
+        display: inline-block;
+        border: $checkbox-radio-border;
+        background: $checkbox-radio-background;
+        vertical-align: middle;
+        margin-right: $checkbox-radio-label-spacing;
+        cursor: pointer;
+    }
+
+}
+
+/* Border radius for radio inputs */
+input[type="radio"] {
+
+    + label span {
+        border-radius: $radio-radius;
+    }
+
+}
+
+/* Border radius for checkbox inputs */
+input[type="checkbox"] {
+
+    + label span {
+        border-radius: $checkbox-radius;
+    }
+
+}
+
+/* Hover state for both checkboxes and radio buttons */
+input[type="radio"]:not(:disabled):hover,
+input[type="checkbox"]:not(:disabled):hover {
+    border: $checkbox-radio-border-hover;
+    transition: all 0.2s ease 0s;
+}
+
+/* Focus state for both checkboxes and radio buttons */
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+    outline: none;
+}
+
+/* Input checked border color for both checkboxes and radio buttons */
+input[type="radio"]:checked + label span,
+input[type="checkbox"]:checked + label span {
+    border: $checkbox-radio-border-active;
+    transition: all 0.2s ease 0s;
+}
+
+/* Unchecked state for radio inputs */
+input[type="radio"] + label span:before {
+    display: block;
+    top: 0;
+    opacity: 0;
+    transition: all 0.2s ease 0s;
+    position: relative;
+}
+
+/* Checked state for radio inputs */
+input[type="radio"]:checked + label span:before {
+    opacity: 1;
+    height: $radio-dot-size;
+    width: $radio-dot-size;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: $radio-dot-color;
+    border-radius: $radio-dot-radius;
+    transition: all 0.2s ease 0s;
+    content: '';
+}
+
+/* Unchecked state for checkbox inputs */
+input[type="checkbox"] + label span:before {
+    display: block;
+    top: 0;
+    opacity: 0;
+    transition: all 0.2s ease 0s;
+    position: relative;
+    line-height: 1;
+}
+
+/* Hover state for checkbox input labels */
+input[type="checkbox"] + label:hover {
+
+    span:before {
+        opacity: 1;
+        color: $checkbox-check-color;
+        font-size: $checkbox-check-font-size;
+        font-family: $checkbox-check-font;
+        content: $checkbox-check-icon;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        transition: all 0.2s ease 0s;
+        -webkit-margin-start: 0;
+        margin-left: 1px !important;
+    }
+
+}
+
+/* Hover state for radio input labels */
+input[type="radio"] + label:hover {
+
+    span:before {
+        opacity: 1;
+        height: $radio-dot-size;
+        width: $radio-dot-size;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        background: $radio-dot-color;
+        border-radius: $radio-dot-radius;
+        transition: all 0.2s ease 0s;
+        content: '';
+    }
+
+}
+
+/* Checked state for checkbox inputs */
+input[type="checkbox"]:checked + label span:before {
+    opacity: 1;
+    color: $checkbox-check-color-active;
+    -webkit-margin-start: 0;
+    font-size: $checkbox-check-font-size;
+    transition: all 0.2s ease 0s;
+    font-family: $checkbox-check-font;
+    content: $checkbox-check-icon;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    margin-left: 1px;
+}
+
+/* Disabled state for both checkbox and radio inputs */
+input:disabled {
+    opacity: 0.5;
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease 0s;
+
+    + label {
+        opacity: 0.6;
+        cursor: default;
+        transition: all 0.2s ease 0s;
+        -webkit-user-select: none;
+    }
+
+}

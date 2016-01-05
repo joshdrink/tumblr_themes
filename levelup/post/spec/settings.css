@@ -1,0 +1,122 @@
+/* =============================================================================
+
+    SETTINGS CSS
+    Authored by Josh Beveridge
+
+============================================================================= */
+
+/* Media Variables ========================================================== */
+
+$portrait: screen and (orientation: portrait);
+/*$(portrait) {}*/
+
+$landscape: screen and (orientation: landscape);
+/*$(landscape) {}*/
+
+$tablet: screen and (orientation: portrait) and (min-width: 768px);
+/*$(tablet) {}*/
+
+$tablet-landscape: screen and (orientation: landscape) and (min-width: 1024px);
+/*$(tablet-landscape) {}*/
+
+$desktop: screen and (orientation: landscape) and (min-width: 1025px);
+/*$(desktop) {}*/
+
+$cinema: screen and (orientation: landscape) and (min-width: 1400px);
+/*$(cinema) {}*/
+
+/* Typography Scale ========================================================= */
+html,
+body {
+    font-size: 14pt;
+}
+
+@media $(tablet) {
+
+    html,
+    body {
+        font-size: 16pt;
+    }
+
+}
+
+@media $(desktop) {
+
+    html,
+    body {
+        font-size: 16pt;
+    }
+
+}
+
+@media $(cinema) {
+
+    html,
+    body {
+        font-size: 18pt;
+    }
+
+}
+
+/* Sections ================================================================= */
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+section {
+    display: block;
+    margin: 0;
+    position: relative;
+    width: 100%;
+}
+
+.container {
+    display: block;
+    margin: 0 auto;
+    max-width: 85%;
+    width: 30rem;
+}
+
+/* Elements ================================================================= */
+img {
+    height: auto;
+    margin: .5rem 0;
+    max-width: 100%;
+}
+
+.video-container {
+    margin: 1.5rem 0;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+    width: 100%;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* Wrappers ================================================================= */
+.wrapper {
+    display: block;
+    position: relative;
+}
